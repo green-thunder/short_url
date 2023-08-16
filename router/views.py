@@ -15,11 +15,11 @@ def home(request):
         key = form.cleaned_data.get('key')
         messages.success(request, f"URL has been successfully shortened to {BASE_URL}{key}")
         return redirect('home')
-    return render(request, 'router/home.html', {"form": form})
+    return render(request, 'router/homepage.html', {"form": form})
 
 def how_to(request):
     # return HttpResponse("<h1>About Page</h1>")
-    return render(request, 'router/how_to_use.html')
+    return render(request, 'router/guide.html')
 
 class URLListView(ListView):
     model = Route
